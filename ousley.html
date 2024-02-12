@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Journey</title>
+    <style>
+        body {
+         background-image: url('back.jpg.jfif'); /* Replace 'your-background-image.jpg' with the path to your image */
+         background-size: cover; /* Ensure the background image covers the entire viewport */
+         margin: 0; 
+         overflow: hidden; 
+        }
+
+        .step {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .step img,
+        .step video {
+            max-width: 90%;
+            max-height: 70%;
+            margin-bottom: 20px;
+        }
+       .next-button {
+          padding: 20px 40px; /* Larger padding to make the button bigger */
+          font-size: 18px; /* Increase font size */
+          background-color: red; /* Red background color */
+          color: white; /* White text color */
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          position: absolute; /* Position the buttons absolutely */
+          bottom: 20px; /* Position the buttons 20px from the bottom */
+          right: 20px; /* Position the buttons 20px from the right */
+          z-index: 1; /* Ensure buttons are above other content */
+         }
+       .no-button {
+            right: 140px; /* Adjust the distance from the right for the NO button */
+        }
+   
+        }
+    </style>
+</head>
+<body>
+    <!-- Step 1 -->
+    <div id="step1" class="step">
+    <h1>HEY POOKIE</h1>  
+    <h2>Will you embark on a journey of love with me?</h2>
+    <video id="VID1.mp4" src="VID1.mp4" autoplay loop muted></video>
+    <button class="next-button" onclick="nextStep(1)">YES</button>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step2" class="step" style="display: none;">
+        <h2>WITH YOU I EXPERIENCE ONE THE THE BEST MEMORIES , AGREE?</h2>
+        <video id="VID2.mp4" src="VID2.mp4" autoplay loop muted></video>
+        <button class="next-button" onclick="nextStep(2)">AGREE</button>
+ </div>
+
+        
+
+    <!-- Step 3 -->
+    <div id="step3" class="step" style="display: none;">
+        <h2>Can you feel my love for you growing stronger each day?</h2>
+        <video id="VID3.mp4"  src="VID3.mp4" autoplay loop muted></video>
+        <button class="next-button" onclick="nextStep(3)">YES</button>
+        <button class="next-button no-button" onclick="nextStep(3)">NO</button>
+   </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="step" style="display: none;">
+        <h2>DO YOU LOVE ME?.</h2>
+        <video id="VID4.mp4" src="VID4.mp4"autoplay loop muted></video>
+       <button class="next-button" onclick="nextStep(4)">YES</button> 
+       <button class="next-button no-button" onclick="nextStep(4)">NO</button> 
+   </div>
+
+    <!-- Step 5 -->
+    <div id="step5" class="step" style="display: none;">
+        <h2>PROMISE TO STAY?.</h2>
+        <video id="VID5.mp4"src="VID5.mp4"  autoplay loop muted></video>
+        <button class="next-button" onclick="nextStep(5)">I'M SORRY</button>
+        <button class="next-button no-button" onclick="nextStep(5)">I PROMISE</button>
+    </div>
+
+    <!-- Step 6 -->
+    <div id="step6" class="step" style="display: none;">
+         <h2>WILL YOU BE MY VALENTINE?</h2>
+        <img src="IMG.jpg" alt = "step 6">
+        <button class="next-button" onclick="confirm()">Confirm</button>
+    </div>
+
+    <script>
+    function nextStep(step) {
+        document.getElementById('step' + step).style.display = 'none';
+        var nextStep = document.getElementById('step' + (step + 1));
+        if (nextStep) {
+            nextStep.style.display = 'flex';
+            if (step < 6) {
+                document.getElementById('video' + (step + 1)).play();
+            }
+        }
+    }
+
+    function confirm() {
+        alert('Will you be my Valentine?');
+    }
+</script>  
+    </script>
+</body>
+</html>
+
